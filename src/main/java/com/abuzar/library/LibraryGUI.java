@@ -21,11 +21,9 @@ public class LibraryGUI {
     private JTextField memberNameField, memberEmailField, memberPhoneField;
     private JTable membersTable;
     private DefaultTableModel membersTableModel;
-
-    // Borrowings Tab
- // AFTER (fixed):
-    private JComboBox bookComboBox;      // Raw type - accepts any object
-    private JComboBox memberComboBox;    // Raw type - accepts any object
+ 
+    private JComboBox bookComboBox;       
+    private JComboBox memberComboBox;     
     private JTextField loanDaysField;
     private JTable borrowingsTable;
     private DefaultTableModel borrowingsTableModel;
@@ -35,7 +33,7 @@ public class LibraryGUI {
     }
 
     private void initialize() {
-        frame = new JFrame("📚 Library Management System");
+        frame = new JFrame(" Library Management System");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1000, 700);
         frame.setLocationRelativeTo(null);
@@ -44,9 +42,9 @@ public class LibraryGUI {
         JTabbedPane tabbedPane = new JTabbedPane();
 
         // Add tabs
-        tabbedPane.addTab("📚 Books", createBooksPanel());
-        tabbedPane.addTab("👤 Members", createMembersPanel());
-        tabbedPane.addTab("📖 Borrowings", createBorrowingsPanel());
+        tabbedPane.addTab(" Books", createBooksPanel());
+        tabbedPane.addTab(" Members", createMembersPanel());
+        tabbedPane.addTab(" Borrowings", createBorrowingsPanel());
 
         frame.add(tabbedPane);
         frame.setVisible(true);
@@ -108,9 +106,9 @@ public class LibraryGUI {
 
         // Buttons
         JPanel buttonPanel = new JPanel();
-        JButton saveBookBtn = new JButton("💾 Save Book");
-        JButton deleteBookBtn = new JButton("🗑️ Delete Book");
-        JButton searchBookBtn = new JButton("🔍 Search");
+        JButton saveBookBtn = new JButton(" Save Book");
+        JButton deleteBookBtn = new JButton("Delete Book");
+        JButton searchBookBtn = new JButton("Search");
         JTextField searchBookField = new JTextField(15);
 
         styleButton(saveBookBtn, new Color(46, 204, 113));
@@ -196,9 +194,9 @@ public class LibraryGUI {
 
         // Buttons
         JPanel buttonPanel = new JPanel();
-        JButton saveMemberBtn = new JButton("💾 Save Member");
-        JButton deleteMemberBtn = new JButton("🗑️ Delete Member");
-        JButton searchMemberBtn = new JButton("🔍 Search");
+        JButton saveMemberBtn = new JButton(" Save Member");
+        JButton deleteMemberBtn = new JButton(" Delete Member");
+        JButton searchMemberBtn = new JButton(" Search");
         JTextField searchMemberField = new JTextField(15);
 
         styleButton(saveMemberBtn, new Color(46, 204, 113));
@@ -287,10 +285,10 @@ public class LibraryGUI {
 
         // Buttons
         JPanel buttonPanel = new JPanel();
-        JButton borrowBtn = new JButton("📖 Borrow Book");
-        JButton returnBtn = new JButton("↩️ Return Book");
-        JButton refreshBtn = new JButton("🔄 Refresh");
-        JButton overdueBtn = new JButton("⚠️ View Overdue");
+        JButton borrowBtn = new JButton(" Borrow Book");
+        JButton returnBtn = new JButton(" Return Book");
+        JButton refreshBtn = new JButton(" Refresh");
+        JButton overdueBtn = new JButton("View Overdue");
 
         styleButton(borrowBtn, new Color(46, 204, 113));
         styleButton(returnBtn, new Color(231, 76, 60));
@@ -594,7 +592,7 @@ public class LibraryGUI {
             return;
         }
 
-        StringBuilder message = new StringBuilder("⚠️ OVERDUE BOOKS:\n\n");
+        StringBuilder message = new StringBuilder(" OVERDUE BOOKS:\n\n");
         for (Borrowing b : overdue) {
             message.append("• ").append(b.getBook().getTitle())
                    .append(" (borrowed by ").append(b.getMember().getName())
